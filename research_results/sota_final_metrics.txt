@@ -1,0 +1,11 @@
+
+    --- FAST PIPELINE RESULTS ---
+    Optimal Threshold Used: 0.3370
+    Accuracy: 0.9058
+    AUC: 0.9647
+    F1: 0.9051
+    
+    Confusion Matrix:
+    [[548  52]
+ [ 61 539]]
+    

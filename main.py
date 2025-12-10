@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
-"""
-Base Replication:SWT + features + KNN/SVM on PTB-DB.
-Optimized for speed with parallel processing and fast entropy approximation.
-"""
+
+# main.py
 
 import math
 import os
-from collections import Counter
-from functools import partial
 from multiprocessing import Pool, cpu_count
 
 import numpy as np
@@ -17,10 +13,9 @@ import wfdb
 from scipy.signal import medfilt, savgol_filter
 from sklearn.metrics import (accuracy_score, precision_score, recall_score,
                              roc_auc_score)
-from sklearn.model_selection import LeaveOneGroupOut, StratifiedKFold
+from sklearn.model_selection import StratifiedKFold
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
-from sklearn.svm import SVC
 from tqdm import tqdm
 
 # -------- PARAMETERS --------
@@ -224,7 +219,7 @@ def build_dataset(records, data_dir=DATA_DIR, leads=None, use_parallel=True):
     # Load labels
     labels_file = os.path.join(data_dir, "PTB_LABELS.csv")
     if not os.path.exists(labels_file):
-        raise FileNotFoundError(f"PTB_LABELS.csv not found")
+        raise FileNotFoundError("PTB_LABELS.csv not found")
 
     dfmap = pd.read_csv(labels_file, dtype=str)
     dfmap['record'] = dfmap['record'].str.strip()
@@ -462,6 +457,7 @@ def diagnose_records(data_dir, labels_file, num_samples=5):
 def save_and_visualize_results(X, y, topk, scores, results, output_base="results"):
     """Save and visualize all results with timestamp-based organization"""
     from datetime import datetime
+
     import matplotlib.pyplot as plt
     import seaborn as sns
 
@@ -674,7 +670,7 @@ def save_and_visualize_results(X, y, topk, scores, results, output_base="results
                 </tr>
         """
 
-    html_content += f"""
+    html_content += """
             </table>
 
             <img src="top10_features.png" alt="Top 10 Features">
@@ -700,14 +696,14 @@ def save_and_visualize_results(X, y, topk, scores, results, output_base="results
     print("RESULTS SAVED SUCCESSFULLY")
     print(f"{'=' * 70}")
     print(f"Location: {output_dir}/")
-    print(f"\nGenerated files:")
+    print("\nGenerated files:")
     print(f"  - features_topk.csv          (Top {len(topk)} feature values)")
-    print(f"  - gainratio_scores.csv       (All feature scores)")
-    print(f"  - classification_results.csv (Performance metrics)")
-    print(f"  - summary_report.txt         (Text summary)")
-    print(f"  - dashboard.html             (Interactive HTML report)")
-    print(f"  - *.png                      (Visualization charts)")
-    print(f"\nOpen dashboard.html in your browser for an interactive view!")
+    print("  - gainratio_scores.csv       (All feature scores)")
+    print("  - classification_results.csv (Performance metrics)")
+    print("  - summary_report.txt         (Text summary)")
+    print("  - dashboard.html             (Interactive HTML report)")
+    print("  - *.png                      (Visualization charts)")
+    print("\nOpen dashboard.html in your browser for an interactive view!")
     print(f"{'=' * 70}\n")
 
     return output_dir
