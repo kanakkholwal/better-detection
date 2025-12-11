@@ -36,7 +36,7 @@ CONFIG = {
     'BATCH_SIZE': 32,     # Smaller batch for larger HR signals
     'EPOCHS': 40,
     'LEARNING_RATE': 1e-3,
-    'OUTPUT_DIR': './sota_results_v2'
+    'OUTPUT_DIR': './results/sota_results_v2'
 }
 
 os.makedirs(CONFIG['OUTPUT_DIR'], exist_ok=True)

@@ -5,20 +5,27 @@
 # Author: Gemini Research Bot
 # ==============================================================================
 
-import os
 import ast
+import os
+
+import kagglehub
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import wfdb
-import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler, MultiLabelBinarizer
-from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score, roc_curve, accuracy_score, f1_score
-
 import tensorflow as tf
-from tensorflow.keras import layers, models, optimizers, callbacks
-import kagglehub
+import wfdb
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report,
+    confusion_matrix,
+    f1_score,
+    roc_auc_score,
+    roc_curve,
+)
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MultiLabelBinarizer, StandardScaler
+from tensorflow.keras import callbacks, layers, models, optimizers
 
 # ==============================================================================
 # 1. CONFIGURATION & SETUP
@@ -31,7 +38,7 @@ CONFIG = {
     'EPOCHS': 30,             # Adjust based on Colab limits
     'LEARNING_RATE': 0.001,
     'DATA_PATH': None,         # Will be set by kagglehub
-    'OUTPUT_DIR': './research_results'
+    'OUTPUT_DIR': './results/resnet'
 }
 
 os.makedirs(CONFIG['OUTPUT_DIR'], exist_ok=True)

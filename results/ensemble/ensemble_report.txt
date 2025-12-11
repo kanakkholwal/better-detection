@@ -1,0 +1,24 @@
+
+    *****************************************
+    FINAL ENSEMBLE RESULT (3 Models Voted)
+    *****************************************
+    Accuracy: 0.9241
+    AUC Score: 0.9783
+    F1 Score: 0.9238
+    Optimal Threshold: 0.4334
+    
+    Confusion Matrix:
+    [[763  60]
+ [ 65 758]]
+    
+    Classification Report:
+                  precision    recall  f1-score   support
+
+         0.0       0.92      0.93      0.92       823
+         1.0       0.93      0.92      0.92       823
+
+    accuracy                           0.92      1646
+   macro avg       0.92      0.92      0.92      1646
+weighted avg       0.92      0.92      0.92      1646
+
+    
