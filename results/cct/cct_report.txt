@@ -1,0 +1,11 @@
+
+    === CUSTOM CCT TRANSFORMER RESULTS (FIXED) ===
+    Accuracy: 0.8584
+    AUC Score: 0.9337
+    F1 Score: 0.8596
+    Optimal Threshold: 0.6468
+
+    Confusion Matrix:
+    [[700 123]
+ [110 713]]
+    
