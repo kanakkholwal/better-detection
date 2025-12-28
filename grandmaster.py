@@ -1,7 +1,6 @@
 # ==============================================================================
 # ECG GRANDMASTER PIPELINE: 5-Paradigm Approach
 # Target: >99% Accuracy via Orthogonal Model Ensembling
-# Author: Gemini Research
 # ==============================================================================
 
 import ast
@@ -23,7 +22,6 @@ from sklearn.metrics import (
     roc_auc_score,
 )
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
 from tensorflow.keras import callbacks, layers, mixed_precision, models, optimizers
 from xgboost import XGBClassifier
 
