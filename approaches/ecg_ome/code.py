@@ -1,5 +1,5 @@
 # ==============================================================================
-# ECG GRANDMASTER PIPELINE: 5-Paradigm Approach
+# ECG OME: 5-Paradigm Approach
 # Target: >99% Accuracy via Orthogonal Model Ensembling
 # ==============================================================================
 
