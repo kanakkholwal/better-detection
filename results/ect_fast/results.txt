@@ -1,0 +1,43 @@
+✅ XGBoost - Validation AUC: 0.9786, Accuracy: 0.9298
+
+🎯 STEP 6: Generating predictions...
+  Transformer: AUC = 0.9876, Accuracy = 0.9567
+  HybridCNN: AUC = 0.9914, Accuracy = 0.9608
+  ResNet: AUC = 0.9920, Accuracy = 0.9671
+  XGBoost: AUC = 0.9786, Accuracy = 0.9298
+
+🤝 STEP 7: Creating ensemble...
+
+🎯 Ensemble Results on Validation Set:
+  AUC:      0.9959
+  Accuracy: 0.9717
+
+🧪 STEP 8: Evaluating on test set...
+
+📊 Individual Model Results on Test Set:
+--------------------------------------------------
+Transformer     | AUC: 0.9643 | Accuracy: 0.8956
+HybridCNN       | AUC: 0.9762 | Accuracy: 0.9303
+ResNet          | AUC: 0.9759 | Accuracy: 0.9352
+XGBoost         | AUC: 0.9319 | Accuracy: 0.8570
+
+============================================================
+🎯 FINAL ENSEMBLE RESULTS
+============================================================
+AUC:      0.9787
+Accuracy: 0.9338
+
+📊 Detailed Metrics:
+Sensitivity (Recall): 0.9162
+Specificity:         0.9440
+Precision:           0.9041
+F1-Score:            0.9101
+
+📊 Confusion Matrix:
+[[1349    80]
+ [  69   754]]
+
+✅ TARGET ACHIEVEMENT:
+--------------------------------------------------
+⚠️  Accuracy target not met: 0.9338 < 0.96
+🎉 AUC TARGET ACHIEVED: 0.9787 ≥ 0.96
