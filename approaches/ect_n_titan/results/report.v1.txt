@@ -4,12 +4,6 @@
     ║             Target: ≥96% Accuracy & AUC                 ║
     ╚══════════════════════════════════════════════════════════╝
     
-Choose approach:
-1. Run Simple Pipeline (new implementation)
-2. Use Titan Pipeline (already proven, needs tuning)
-3. Run Both
-
-Enter choice (1, 2, or 3): 3
 
 🔁 Running both approaches...
 
