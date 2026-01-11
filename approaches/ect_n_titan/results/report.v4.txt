@@ -316,7 +316,7 @@ Accuracy: 0.9325
 [[1326    42]
  [ 108   745]]
 
-✅ Results saved to ./ecg_final_results/simple_results.txt
+✅ Results saved to ./results/report.v4.txt
 Run your original Titan pipeline externally with patient-wise split and CV.
 Simple: AUC=0.9691, ACC=0.9325
 Titan:  AUC=0.9101, ACC=0.9751
