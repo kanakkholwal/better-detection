@@ -1,0 +1,65 @@
+
+Simple pipeline:
+    - CNN
+    - Inception
+    - ResNet
+    - XGBoost
+Metrics:
+    Ensemble AUC: 0.9608
+    Accuracy: 0.9136
+    Confusion: [[1380, 75], [121, 693]]
+    Weights:
+    CNN: 0.253
+    Inception: 0.251
+    ResNet: 0.254
+    XGBoost: 0.242
+
+========================================================
+
+
+1: Run Simple Pipeline (patient-wise)
+2: Run Titan (patient-wise)
+3: Both
+Enter choice (1/2/3): 2
+============================================================
+RUNNING TITAN PIPELINE (patient-wise split)
+============================================================
+Loading PTB-XL dataset...
+Using Colab cache for faster access to the 'ptb-xl-dataset' dataset.
+Loading ECG signals (parallel)...
+Loaded 15013 samples from 13453 patients
+Train samples: 10511, Val: 2233, Test: 2269
+Patients - train/val/test: 9417/2018/2018
+After augmentation: train 24909
+
+Training Inception (anchor)...
+
+Training Titan_Inception...
+Titan_Inception - Best epoch: 10, Val AUC: 0.9552, Val Acc: 0.8894
+
+Training ResNet (support)...
+
+Training Titan_ResNet...
+Titan_ResNet - Best epoch: 4, Val AUC: 0.9603, Val Acc: 0.9077
+
+Training Simple CNN (support)...
+
+Training Titan_CNN...
+Titan_CNN - Best epoch: 12, Val AUC: 0.9569, Val Acc: 0.9060
+
+Training XGBoost on embeddings...
+  Inception: Val AUC = 0.9499, Test AUC = 0.9442
+  ResNet: Val AUC = 0.9624, Test AUC = 0.9516
+  CNN: Val AUC = 0.9585, Test AUC = 0.9557
+  XGB_Embed: Val AUC = 0.9511, Test AUC = 0.9492
+
+Ensemble Weights (from val AUC):
+  Inception: 0.249
+  ResNet: 0.252
+  CNN: 0.251
+  XGB_Embed: 0.249
+
+FINAL TITAN METRICS
+AUC:      0.9585
+Accuracy: 0.9057
+Sensitivity: 0.8391, Specificity: 0.9430, F1: 0.8646

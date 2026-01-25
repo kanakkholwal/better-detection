@@ -320,3 +320,4 @@ Accuracy: 0.9325
 Run your original Titan pipeline externally with patient-wise split and CV.
 Simple: AUC=0.9691, ACC=0.9325
 Titan:  AUC=0.9101, ACC=0.9751
+Titan:  AUC=0.9585, ACC=0.9057 - Patients-Wise split: from ./code.v5
