@@ -1,4 +1,33 @@
 
+============================================================
+ECG SIMPLE PIPELINE - patient-wise (strict)
+============================================================
+
+Loading ECG signals (parallel)...
+Loaded 15013 samples from 13453 patients
+  Train samples: 10511, Val: 2233, Test: 2269
+  Unique patients - train/val/test: 9417/2018/2018
+  After augment: train 24909
+
+Training SimpleCNN...
+SimpleCNN - Best epoch: 9, Val AUC: 0.9570, Val Acc: 0.9028
+
+Training Inception...
+Inception - Best epoch: 17, Val AUC: 0.9566, Val Acc: 0.9019
+
+Training ResNet...
+ResNet - Best epoch: 9, Val AUC: 0.9568, Val Acc: 0.9091
+  CNN: Val AUC = 0.9568, Test AUC = 0.9493
+  Inception: Val AUC = 0.9541, Test AUC = 0.9461
+  ResNet: Val AUC = 0.9612, Test AUC = 0.9562
+  XGBoost: Val AUC = 0.9173, Test AUC = 0.9160
+
+Ensemble Weights:
+  CNN: 0.252
+  Inception: 0.252
+  ResNet: 0.254
+  XGBoost: 0.242
+
 Simple pipeline:
     - CNN
     - Inception
@@ -14,13 +43,7 @@ Metrics:
     ResNet: 0.254
     XGBoost: 0.242
 
-========================================================
-
-
-1: Run Simple Pipeline (patient-wise)
-2: Run Titan (patient-wise)
-3: Both
-Enter choice (1/2/3): 2
+Results saved to ./results/report.v5.txt
 ============================================================
 RUNNING TITAN PIPELINE (patient-wise split)
 ============================================================
@@ -35,31 +58,42 @@ After augmentation: train 24909
 Training Inception (anchor)...
 
 Training Titan_Inception...
-Titan_Inception - Best epoch: 10, Val AUC: 0.9552, Val Acc: 0.8894
+Titan_Inception - Best epoch: 6, Val AUC: 0.9556, Val Acc: 0.9001
 
 Training ResNet (support)...
 
 Training Titan_ResNet...
-Titan_ResNet - Best epoch: 4, Val AUC: 0.9603, Val Acc: 0.9077
+Titan_ResNet - Best epoch: 4, Val AUC: 0.9626, Val Acc: 0.9104
 
 Training Simple CNN (support)...
 
 Training Titan_CNN...
-Titan_CNN - Best epoch: 12, Val AUC: 0.9569, Val Acc: 0.9060
+Titan_CNN - Best epoch: 7, Val AUC: 0.9609, Val Acc: 0.9069
+
+
 
 Training XGBoost on embeddings...
-  Inception: Val AUC = 0.9499, Test AUC = 0.9442
-  ResNet: Val AUC = 0.9624, Test AUC = 0.9516
-  CNN: Val AUC = 0.9585, Test AUC = 0.9557
-  XGB_Embed: Val AUC = 0.9511, Test AUC = 0.9492
+  Inception: Val AUC = 0.9545, Test AUC = 0.9514
+  ResNet: Val AUC = 0.9574, Test AUC = 0.9577
+  CNN: Val AUC = 0.9593, Test AUC = 0.9587
+  XGB_Embed: Val AUC = 0.9576, Test AUC = 0.9503
 
 Ensemble Weights (from val AUC):
   Inception: 0.249
-  ResNet: 0.252
+  ResNet: 0.250
   CNN: 0.251
-  XGB_Embed: 0.249
+  XGB_Embed: 0.250
+
+CONFUSION MATRIX (TITAN)
+TN: 1372  FP: 83
+FN: 123  TP: 691
+
+TITAN results saved to ./results/report.v5.txt
+
 
 FINAL TITAN METRICS
-AUC:      0.9585
-Accuracy: 0.9057
-Sensitivity: 0.8391, Specificity: 0.9430, F1: 0.8646
+AUC:      0.9637
+Accuracy: 0.9092
+Sensitivity: 0.8489, Specificity: 0.9430, F1: 0.8703
+Simple: AUC=0.9580, ACC=0.9088
+Titan:  AUC=0.9637, ACC=0.9092

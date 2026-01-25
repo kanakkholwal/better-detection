@@ -8,7 +8,7 @@ This repository contains experimental machine learning and deep learning pipelin
 
 ## Repository Structure
 
-```
+```bash
 better-detection/
 ├── approaches/                    # All experimental pipelines
 │   ├── LGS-NET/                   # [EXPERIMENTAL] Local-Global-Spectral Network
@@ -57,6 +57,7 @@ better-detection/
 
 | Status | Description |
 |--------|-------------|
+
 | **STABLE** | Validated approach with reproducible results |
 | **EXPERIMENTAL** | Promising approach, results may vary |
 
@@ -67,6 +68,7 @@ better-detection/
 ### Signal Preprocessing
 
 All pipelines implement:
+
 - **Z-score normalization**: Per-lead standardization `(signal - mean) / (std + 1e-8)`
 - **Resampling**: 100 Hz (low-res) or 250 Hz (high-res from 500 Hz)
 - **Bandpass filtering** (in `sota/`): 0.5-45 Hz Butterworth filter
@@ -76,6 +78,7 @@ All pipelines implement:
 
 | Approach | Folder | Description | Status |
 |----------|--------|-------------|--------|
+
 | ResNet-1D + Multi-Head Attention | `resnet/` | Residual blocks with 4-head self-attention | Stable |
 | Lead Attention + LogReg | `ecg_base/` | Channel attention for lead weighting | Stable |
 | 3-Model Voting Ensemble | `ensemble/` | ResNet-Plus with label smoothing | Stable |
@@ -91,6 +94,7 @@ All pipelines implement:
 
 | Model | Usage |
 |-------|-------|
+
 | XGBoost | Statistical features / deep embeddings |
 | Logistic Regression | Head classifier on CNN features |
 | Ridge Classifier | ROCKET-lite features |
@@ -103,6 +107,7 @@ All pipelines implement:
 
 | Property | Value |
 |----------|-------|
+
 | Source | [PhysioNet PTB-XL](https://physionet.org/content/ptb-xl/1.0.1/) via KaggleHub |
 | Total Records | 21,837 ECG recordings |
 | Used Subset | MI vs Normal (balanced) |
@@ -118,6 +123,7 @@ All pipelines implement:
 
 | Approach | Folder | Accuracy | AUC | F1 |
 |----------|--------|----------|-----|-----|
+
 | **3-Model Ensemble** | `ensemble/` | 0.924 | **0.978** | 0.924 |
 | LGS-NET | `LGS-NET/` | 0.920 | 0.975 | - |
 | TITAN Ensemble | `titan/` | 0.910 | 0.975 | - |
@@ -136,6 +142,7 @@ All pipelines implement:
 
 | Package | Version |
 |---------|---------|
+
 | Python | 3.10+ |
 | TensorFlow | 2.15+ |
 | NumPy | 2.3.3 |
@@ -172,14 +179,17 @@ Results are saved to `./results/` within each approach folder.
 ## Known Issues and Limitations
 
 ### Data Leakage Risks
+
 - Some scripts apply augmentation before train/val split
 - No patient-level splitting enforced
 
 ### Dataset Limitations
+
 - Single-center study (PTB-XL)
 - Balanced via downsampling (selection bias possible)
 
 ### Clinical Validity
+
 **NOT validated for clinical use.** Models have not been tested on external datasets.
 
 ---

@@ -521,7 +521,9 @@ def run_titan_pipeline():
     specificity = tn / (tn + fp) if (tn + fp) else 0
     precision = tp / (tp + fp) if (tp + fp) else 0
     f1 = 2 * precision * sensitivity / (precision + sensitivity) if (precision + sensitivity) else 0
-
+    print("\nCONFUSION MATRIX (TITAN)")
+    print(f"TN: {tn}  FP: {fp}")
+    print(f"FN: {fn}  TP: {tp}")
     # save report
     out_path = os.path.join(CONFIG['OUTPUT_DIR'], "titan_results.txt")
     with open(out_path, "w") as f:

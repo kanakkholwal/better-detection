@@ -1,0 +1,55 @@
+Using Colab cache for faster access to the 'ptb-xl-dataset' dataset.
+
+==============================
+Table S1: SCP Codes for Myocardial Infarction (MI)
+==============================
+SCP_Code                                  Description
+    ALMI          anterolateral myocardial infarction
+     AMI               anterior myocardial infarction
+    ASMI           anteroseptal myocardial infarction
+    ILMI          inferolateral myocardial infarction
+     IMI               inferior myocardial infarction
+   INJAL subendocardial injury in anterolateral leads
+   INJAS  subendocardial injury in anteroseptal leads
+   INJIL subendocardial injury in inferolateral leads
+   INJIN      subendocardial injury in inferior leads
+   INJLA       subendocardial injury in lateral leads
+   IPLMI   inferoposterolateral myocardial infarction
+    IPMI        inferoposterior myocardial infarction
+     LMI                lateral myocardial infarction
+     PMI              posterior myocardial infarction
+
+==============================
+Table S2: SCP Codes for Normal ECG (NORM)
+==============================
+SCP_Code Description
+    NORM  normal ECG
+
+% ===== LaTeX: Supplementary Tables =====
+
+==============================
+Table S1: SCP Codes for Myocardial Infarction (MI)
+==============================
+| SCP_Code   | Description                                  |
+|:-----------|:---------------------------------------------|
+| ALMI       | anterolateral myocardial infarction          |
+| AMI        | anterior myocardial infarction               |
+| ASMI       | anteroseptal myocardial infarction           |
+| ILMI       | inferolateral myocardial infarction          |
+| IMI        | inferior myocardial infarction               |
+| INJAL      | subendocardial injury in anterolateral leads |
+| INJAS      | subendocardial injury in anteroseptal leads  |
+| INJIL      | subendocardial injury in inferolateral leads |
+| INJIN      | subendocardial injury in inferior leads      |
+| INJLA      | subendocardial injury in lateral leads       |
+| IPLMI      | inferoposterolateral myocardial infarction   |
+| IPMI       | inferoposterior myocardial infarction        |
+| LMI        | lateral myocardial infarction                |
+| PMI        | posterior myocardial infarction              |
+
+==============================
+Table S2: SCP Codes for Normal ECG (NORM)
+==============================
+| SCP_Code   | Description   |
+|:-----------|:--------------|
+| NORM       | normal ECG    |
