@@ -1,0 +1,323 @@
+🏁 Starting ECG classification pipeline...
+📥 Loading PTB-XL dataset...
+Using Colab cache for faster access to the 'ptb-xl-dataset' dataset.
+  Loaded 500/15013 signals...
+  Loaded 1000/15013 signals...
+  Loaded 1500/15013 signals...
+  Loaded 2000/15013 signals...
+  Loaded 2500/15013 signals...
+  Loaded 3000/15013 signals...
+  Loaded 3500/15013 signals...
+  Loaded 4000/15013 signals...
+  Loaded 4500/15013 signals...
+  Loaded 5000/15013 signals...
+  Loaded 5500/15013 signals...
+  Loaded 6000/15013 signals...
+  Loaded 6500/15013 signals...
+  Loaded 7000/15013 signals...
+  Loaded 7500/15013 signals...
+  Loaded 8000/15013 signals...
+  Loaded 8500/15013 signals...
+  Loaded 9000/15013 signals...
+  Loaded 9500/15013 signals...
+  Loaded 10000/15013 signals...
+  Loaded 10500/15013 signals...
+  Loaded 11000/15013 signals...
+  Loaded 11500/15013 signals...
+  Loaded 12000/15013 signals...
+  Loaded 12500/15013 signals...
+  Loaded 13000/15013 signals...
+  Loaded 13500/15013 signals...
+  Loaded 14000/15013 signals...
+  Loaded 14500/15013 signals...
+  Loaded 15000/15013 signals...
+  Loaded 15013/15013 signals...
+✅ Successfully loaded 15013 signals from 13453 patients
+
+📊 Dataset split:
+   Train: 12792 samples from 11436 patients
+   Test: 2221 samples from 2017 patients
+   MI/NORM ratio - Train: 0.362, Test: 0.384
+
+🚀 Starting stacking pipeline...
+   Training on 12792 samples, testing on 2221 samples
+   Using 5 folds with patient-wise grouping
+
+📊 Extracting features for XGBoost...
+  Extracting features...
+  Extracting features...
+   Feature extraction completed in 147.0 seconds
+
+==================================================
+📂 Fold 1/5
+==================================================
+   Train: 10233 samples (3756 MI, 6477 NORM)
+   Val: 2559 samples (877 MI, 1682 NORM)
+   Augmenting training data...
+   Augmented to 24222 samples (5.1s)
+
+   Training deep learning models...
+    Training CNN_fold1...
+      CNN_fold1: Epoch 1/40, AUC: 0.9607, Val AUC: 0.9668
+      CNN_fold1: Epoch 6/40, AUC: 0.9881, Val AUC: 0.9756
+      CNN_fold1: Epoch 11/40, AUC: 0.9982, Val AUC: 0.9693
+      CNN_fold1: Epoch 16/40, AUC: 0.9999, Val AUC: 0.9618
+      CNN_fold1: Epoch 21/40, AUC: 1.0000, Val AUC: 0.9563
+      CNN_fold1: Epoch 26/40, AUC: 1.0000, Val AUC: 0.9538
+      CNN_fold1: Epoch 31/40, AUC: 1.0000, Val AUC: 0.9529
+      CNN_fold1: Epoch 36/40, AUC: 1.0000, Val AUC: 0.9537
+    CNN_fold1 finished: Best epoch 5, Val AUC: 0.9761
+    Training Inception_fold1...
+      Inception_fold1: Epoch 1/40, AUC: 0.9496, Val AUC: 0.9649
+      Inception_fold1: Epoch 6/40, AUC: 0.9855, Val AUC: 0.9745
+      Inception_fold1: Epoch 11/40, AUC: 0.9950, Val AUC: 0.9732
+      Inception_fold1: Epoch 16/40, AUC: 0.9987, Val AUC: 0.9653
+      Inception_fold1: Epoch 21/40, AUC: 0.9995, Val AUC: 0.9597
+      Inception_fold1: Epoch 26/40, AUC: 0.9998, Val AUC: 0.9581
+      Inception_fold1: Epoch 31/40, AUC: 0.9999, Val AUC: 0.9564
+      Inception_fold1: Epoch 36/40, AUC: 0.9999, Val AUC: 0.9566
+    Inception_fold1 finished: Best epoch 8, Val AUC: 0.9755
+    Training ResNet_fold1...
+      ResNet_fold1: Epoch 1/40, AUC: 0.9602, Val AUC: 0.9699
+      ResNet_fold1: Epoch 6/40, AUC: 0.9919, Val AUC: 0.9695
+      ResNet_fold1: Epoch 11/40, AUC: 0.9991, Val AUC: 0.9545
+      ResNet_fold1: Epoch 16/40, AUC: 1.0000, Val AUC: 0.9456
+      ResNet_fold1: Epoch 21/40, AUC: 1.0000, Val AUC: 0.9439
+      ResNet_fold1: Epoch 26/40, AUC: 1.0000, Val AUC: 0.9419
+      ResNet_fold1: Epoch 31/40, AUC: 1.0000, Val AUC: 0.9413
+      ResNet_fold1: Epoch 36/40, AUC: 1.0000, Val AUC: 0.9402
+    ResNet_fold1 finished: Best epoch 3, Val AUC: 0.9746
+
+   Training XGBoost...
+    XGBoost: Val AUC: 0.9073
+   Making predictions...
+
+   Fold 1 validation metrics:
+     CNN: AUC = 0.9765
+     Inception: AUC = 0.9737
+     ResNet: AUC = 0.9706
+     XGBoost: AUC = 0.9073
+
+==================================================
+📂 Fold 2/5
+==================================================
+   Train: 10233 samples (3645 MI, 6588 NORM)
+   Val: 2559 samples (988 MI, 1571 NORM)
+   Augmenting training data...
+   Augmented to 24111 samples (5.4s)
+
+   Training deep learning models...
+    Training CNN_fold2...
+      CNN_fold2: Epoch 1/40, AUC: 0.9587, Val AUC: 0.9680
+      CNN_fold2: Epoch 6/40, AUC: 0.9879, Val AUC: 0.9699
+      CNN_fold2: Epoch 11/40, AUC: 0.9977, Val AUC: 0.9669
+      CNN_fold2: Epoch 16/40, AUC: 0.9999, Val AUC: 0.9608
+      CNN_fold2: Epoch 21/40, AUC: 1.0000, Val AUC: 0.9576
+      CNN_fold2: Epoch 26/40, AUC: 1.0000, Val AUC: 0.9547
+      CNN_fold2: Epoch 31/40, AUC: 1.0000, Val AUC: 0.9548
+      CNN_fold2: Epoch 36/40, AUC: 1.0000, Val AUC: 0.9527
+    CNN_fold2 finished: Best epoch 3, Val AUC: 0.9734
+    Training Inception_fold2...
+      Inception_fold2: Epoch 1/40, AUC: 0.9482, Val AUC: 0.9694
+      Inception_fold2: Epoch 6/40, AUC: 0.9854, Val AUC: 0.9757
+      Inception_fold2: Epoch 11/40, AUC: 0.9945, Val AUC: 0.9640
+      Inception_fold2: Epoch 16/40, AUC: 0.9983, Val AUC: 0.9621
+      Inception_fold2: Epoch 21/40, AUC: 0.9995, Val AUC: 0.9571
+      Inception_fold2: Epoch 26/40, AUC: 0.9997, Val AUC: 0.9581
+      Inception_fold2: Epoch 31/40, AUC: 0.9998, Val AUC: 0.9565
+      Inception_fold2: Epoch 36/40, AUC: 0.9998, Val AUC: 0.9551
+    Inception_fold2 finished: Best epoch 4, Val AUC: 0.9787
+    Training ResNet_fold2...
+      ResNet_fold2: Epoch 1/40, AUC: 0.9589, Val AUC: 0.9729
+      ResNet_fold2: Epoch 6/40, AUC: 0.9917, Val AUC: 0.9655
+      ResNet_fold2: Epoch 11/40, AUC: 0.9996, Val AUC: 0.9582
+      ResNet_fold2: Epoch 16/40, AUC: 1.0000, Val AUC: 0.9474
+      ResNet_fold2: Epoch 21/40, AUC: 1.0000, Val AUC: 0.9458
+      ResNet_fold2: Epoch 26/40, AUC: 1.0000, Val AUC: 0.9429
+      ResNet_fold2: Epoch 31/40, AUC: 1.0000, Val AUC: 0.9414
+      ResNet_fold2: Epoch 36/40, AUC: 1.0000, Val AUC: 0.9413
+    ResNet_fold2 finished: Best epoch 2, Val AUC: 0.9749
+
+   Training XGBoost...
+    XGBoost: Val AUC: 0.9030
+   Making predictions...
+
+   Fold 2 validation metrics:
+     CNN: AUC = 0.9727
+     Inception: AUC = 0.9702
+     ResNet: AUC = 0.9692
+     XGBoost: AUC = 0.9030
+
+==================================================
+📂 Fold 3/5
+==================================================
+   Train: 10234 samples (3738 MI, 6496 NORM)
+   Val: 2558 samples (895 MI, 1663 NORM)
+   Augmenting training data...
+   Augmented to 24206 samples (6.0s)
+
+   Training deep learning models...
+    Training CNN_fold3...
+      CNN_fold3: Epoch 1/40, AUC: 0.9591, Val AUC: 0.9629
+      CNN_fold3: Epoch 6/40, AUC: 0.9892, Val AUC: 0.9629
+      CNN_fold3: Epoch 11/40, AUC: 0.9982, Val AUC: 0.9571
+      CNN_fold3: Epoch 16/40, AUC: 0.9999, Val AUC: 0.9526
+      CNN_fold3: Epoch 21/40, AUC: 1.0000, Val AUC: 0.9454
+      CNN_fold3: Epoch 26/40, AUC: 1.0000, Val AUC: 0.9405
+      CNN_fold3: Epoch 31/40, AUC: 1.0000, Val AUC: 0.9383
+      CNN_fold3: Epoch 36/40, AUC: 1.0000, Val AUC: 0.9392
+    CNN_fold3 finished: Best epoch 8, Val AUC: 0.9680
+    Training Inception_fold3...
+      Inception_fold3: Epoch 1/40, AUC: 0.9494, Val AUC: 0.9659
+      Inception_fold3: Epoch 6/40, AUC: 0.9869, Val AUC: 0.9700
+      Inception_fold3: Epoch 11/40, AUC: 0.9949, Val AUC: 0.9650
+      Inception_fold3: Epoch 16/40, AUC: 0.9985, Val AUC: 0.9617
+      Inception_fold3: Epoch 21/40, AUC: 0.9993, Val AUC: 0.9557
+      Inception_fold3: Epoch 26/40, AUC: 0.9995, Val AUC: 0.9498
+      Inception_fold3: Epoch 31/40, AUC: 0.9997, Val AUC: 0.9497
+      Inception_fold3: Epoch 36/40, AUC: 0.9996, Val AUC: 0.9471
+    Inception_fold3 finished: Best epoch 7, Val AUC: 0.9706
+    Training ResNet_fold3...
+      ResNet_fold3: Epoch 1/40, AUC: 0.9616, Val AUC: 0.9559
+      ResNet_fold3: Epoch 6/40, AUC: 0.9927, Val AUC: 0.9431
+      ResNet_fold3: Epoch 11/40, AUC: 0.9996, Val AUC: 0.9485
+      ResNet_fold3: Epoch 16/40, AUC: 0.9999, Val AUC: 0.9419
+      ResNet_fold3: Epoch 21/40, AUC: 1.0000, Val AUC: 0.9379
+      ResNet_fold3: Epoch 26/40, AUC: 1.0000, Val AUC: 0.9350
+      ResNet_fold3: Epoch 31/40, AUC: 1.0000, Val AUC: 0.9351
+      ResNet_fold3: Epoch 36/40, AUC: 1.0000, Val AUC: 0.9335
+    ResNet_fold3 finished: Best epoch 3, Val AUC: 0.9634
+
+   Training XGBoost...
+    XGBoost: Val AUC: 0.9046
+   Making predictions...
+
+   Fold 3 validation metrics:
+     CNN: AUC = 0.9673
+     Inception: AUC = 0.9665
+     ResNet: AUC = 0.9665
+     XGBoost: AUC = 0.9046
+
+==================================================
+📂 Fold 4/5
+==================================================
+   Train: 10234 samples (3668 MI, 6566 NORM)
+   Val: 2558 samples (965 MI, 1593 NORM)
+   Augmenting training data...
+   Augmented to 24136 samples (5.8s)
+
+   Training deep learning models...
+    Training CNN_fold4...
+      CNN_fold4: Epoch 1/40, AUC: 0.9592, Val AUC: 0.9665
+      CNN_fold4: Epoch 6/40, AUC: 0.9883, Val AUC: 0.9711
+      CNN_fold4: Epoch 11/40, AUC: 0.9978, Val AUC: 0.9612
+      CNN_fold4: Epoch 16/40, AUC: 0.9999, Val AUC: 0.9492
+      CNN_fold4: Epoch 21/40, AUC: 1.0000, Val AUC: 0.9442
+      CNN_fold4: Epoch 26/40, AUC: 1.0000, Val AUC: 0.9394
+      CNN_fold4: Epoch 31/40, AUC: 1.0000, Val AUC: 0.9396
+      CNN_fold4: Epoch 36/40, AUC: 1.0000, Val AUC: 0.9373
+    CNN_fold4 finished: Best epoch 6, Val AUC: 0.9711
+    Training Inception_fold4...
+      Inception_fold4: Epoch 1/40, AUC: 0.9529, Val AUC: 0.9665
+      Inception_fold4: Epoch 6/40, AUC: 0.9855, Val AUC: 0.9709
+      Inception_fold4: Epoch 11/40, AUC: 0.9946, Val AUC: 0.9628
+      Inception_fold4: Epoch 16/40, AUC: 0.9985, Val AUC: 0.9578
+      Inception_fold4: Epoch 21/40, AUC: 0.9993, Val AUC: 0.9528
+      Inception_fold4: Epoch 26/40, AUC: 0.9996, Val AUC: 0.9504
+      Inception_fold4: Epoch 31/40, AUC: 0.9995, Val AUC: 0.9507
+      Inception_fold4: Epoch 36/40, AUC: 0.9996, Val AUC: 0.9495
+    Inception_fold4 finished: Best epoch 3, Val AUC: 0.9715
+    Training ResNet_fold4...
+      ResNet_fold4: Epoch 1/40, AUC: 0.9616, Val AUC: 0.9701
+      ResNet_fold4: Epoch 6/40, AUC: 0.9917, Val AUC: 0.9657
+      ResNet_fold4: Epoch 11/40, AUC: 0.9995, Val AUC: 0.9467
+      ResNet_fold4: Epoch 16/40, AUC: 1.0000, Val AUC: 0.9389
+      ResNet_fold4: Epoch 21/40, AUC: 1.0000, Val AUC: 0.9329
+      ResNet_fold4: Epoch 26/40, AUC: 1.0000, Val AUC: 0.9324
+      ResNet_fold4: Epoch 31/40, AUC: 1.0000, Val AUC: 0.9299
+      ResNet_fold4: Epoch 36/40, AUC: 1.0000, Val AUC: 0.9307
+    ResNet_fold4 finished: Best epoch 2, Val AUC: 0.9726
+
+   Training XGBoost...
+    XGBoost: Val AUC: 0.8873
+   Making predictions...
+
+   Fold 4 validation metrics:
+     CNN: AUC = 0.9667
+     Inception: AUC = 0.9637
+     ResNet: AUC = 0.9660
+     XGBoost: AUC = 0.8873
+
+==================================================
+📂 Fold 5/5
+==================================================
+   Train: 10234 samples (3725 MI, 6509 NORM)
+   Val: 2558 samples (908 MI, 1650 NORM)
+   Augmenting training data...
+   Augmented to 24193 samples (5.6s)
+
+   Training deep learning models...
+    Training CNN_fold5...
+      CNN_fold5: Epoch 1/40, AUC: 0.9569, Val AUC: 0.9717
+      CNN_fold5: Epoch 6/40, AUC: 0.9865, Val AUC: 0.9738
+      CNN_fold5: Epoch 11/40, AUC: 0.9952, Val AUC: 0.9726
+      CNN_fold5: Epoch 16/40, AUC: 0.9998, Val AUC: 0.9608
+      CNN_fold5: Epoch 21/40, AUC: 1.0000, Val AUC: 0.9548
+      CNN_fold5: Epoch 26/40, AUC: 1.0000, Val AUC: 0.9539
+      CNN_fold5: Epoch 31/40, AUC: 1.0000, Val AUC: 0.9535
+      CNN_fold5: Epoch 36/40, AUC: 1.0000, Val AUC: 0.9530
+    CNN_fold5 finished: Best epoch 7, Val AUC: 0.9762
+    Training Inception_fold5...
+      Inception_fold5: Epoch 1/40, AUC: 0.9478, Val AUC: 0.9697
+      Inception_fold5: Epoch 6/40, AUC: 0.9845, Val AUC: 0.9773
+      Inception_fold5: Epoch 11/40, AUC: 0.9943, Val AUC: 0.9747
+      Inception_fold5: Epoch 16/40, AUC: 0.9986, Val AUC: 0.9693
+      Inception_fold5: Epoch 21/40, AUC: 0.9996, Val AUC: 0.9651
+      Inception_fold5: Epoch 26/40, AUC: 0.9999, Val AUC: 0.9621
+      Inception_fold5: Epoch 31/40, AUC: 0.9999, Val AUC: 0.9601
+      Inception_fold5: Epoch 36/40, AUC: 0.9999, Val AUC: 0.9587
+    Inception_fold5 finished: Best epoch 6, Val AUC: 0.9773
+    Training ResNet_fold5...
+      ResNet_fold5: Epoch 1/40, AUC: 0.9585, Val AUC: 0.9708
+      ResNet_fold5: Epoch 6/40, AUC: 0.9915, Val AUC: 0.9704
+      ResNet_fold5: Epoch 11/40, AUC: 0.9990, Val AUC: 0.9598
+      ResNet_fold5: Epoch 16/40, AUC: 1.0000, Val AUC: 0.9552
+      ResNet_fold5: Epoch 21/40, AUC: 1.0000, Val AUC: 0.9499
+      ResNet_fold5: Epoch 26/40, AUC: 1.0000, Val AUC: 0.9475
+      ResNet_fold5: Epoch 31/40, AUC: 1.0000, Val AUC: 0.9473
+      ResNet_fold5: Epoch 36/40, AUC: 1.0000, Val AUC: 0.9468
+    ResNet_fold5 finished: Best epoch 3, Val AUC: 0.9778
+
+   Training XGBoost...
+    XGBoost: Val AUC: 0.9126
+   Making predictions...
+
+   Fold 5 validation metrics:
+     CNN: AUC = 0.9742
+     Inception: AUC = 0.9745
+     ResNet: AUC = 0.9736
+     XGBoost: AUC = 0.9126
+
+==================================================
+🧠 Training meta-learner (stacking)...
+   Meta-learner trained.
+
+📈 Tuning threshold...
+   Chosen threshold (accuracy): 0.450 (score=0.9296)
+
+==================================================
+🎯 Final ensemble test set performance:
+   AUC: 0.9711
+   Accuracy: 0.9370
+   F1 Score: 0.9157
+   Confusion matrix:
+[[1321   47]
+ [  93  760]]
+==================================================
+
+==================================================
+🚀 Final evaluation...
+
+🔄 Retraining on full training set...
+   Training final CNN model...
+    Training CNN_final...

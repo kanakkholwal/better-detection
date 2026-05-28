@@ -1,0 +1,13 @@
+
+    === LGS-NET FINAL RESULTS ===
+    Architecture: Dual-Stream (ResNet-Attention + STFT-CNN)
+    Attention Mode: Local Window + Lead-Wise
+    
+    Accuracy: 0.9204
+    AUC Score: 0.9747
+    Optimal Threshold: 0.3470
+    
+    Confusion Matrix:
+    [[752  71]
+ [ 60 763]]
+    

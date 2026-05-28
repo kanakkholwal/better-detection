@@ -1,0 +1,23 @@
+PTB-XL MI Detection — Final Report (patient-wise, no SMOTE)
+========================================================================
+
+Ensemble weights (softmax-free; w_i = val_auc_i / sum val_auc_j):
+  SimpleCNN          weight=0.2503  val_auc=0.9802
+  Inception          weight=0.2505  val_auc=0.9807
+  ResNet             weight=0.2488  val_auc=0.9742
+  XGB                weight=0.2504  val_auc=0.9804
+
+Model                    AUC     Acc      F1    Sens    Spec
+------------------------------------------------------------
+SimpleCNN             0.9769  0.9055  0.8799  0.9176  0.8981
+Inception             0.9783  0.9237  0.8996  0.9071  0.9338
+ResNet                0.9716  0.9113  0.8843  0.8988  0.9188
+XGB                   0.9767  0.9255  0.8995  0.8847  0.9501
+Ensemble(TITAN)       0.9789  0.9228  0.8981  0.9024  0.9352
+
+Confusion matrices (test) [[TN, FP], [FN, TP]]:
+  SimpleCNN            [[1261, 143], [70, 780]]
+  Inception            [[1311, 93], [79, 771]]
+  ResNet               [[1290, 114], [86, 764]]
+  XGB                  [[1334, 70], [98, 752]]
+  Ensemble(TITAN)      [[1313, 91], [83, 767]]

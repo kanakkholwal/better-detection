@@ -1,0 +1,130 @@
+{
+  "tuned_thresholds": {
+    "SimpleCNN": 0.775,
+    "Inception": 0.64,
+    "ResNet": 0.73,
+    "XGB": 0.6900000000000001,
+    "Ensemble(orig)": 0.66,
+    "Meta-LR": 0.605
+  },
+  "tuned_test_metrics": {
+    "SimpleCNN": {
+      "auc": 0.9768920730685436,
+      "accuracy": 0.9241348713398403,
+      "f1": 0.8963007883565798,
+      "sensitivity": 0.8694117647058823,
+      "specificity": 0.9572649572649573,
+      "confusion_matrix": [
+        [
+          1344,
+          60
+        ],
+        [
+          111,
+          739
+        ]
+      ],
+      "threshold": 0.775
+    },
+    "Inception": {
+      "auc": 0.9783182503770739,
+      "accuracy": 0.9285714285714286,
+      "f1": 0.9020085209981741,
+      "sensitivity": 0.8717647058823529,
+      "specificity": 0.9629629629629629,
+      "confusion_matrix": [
+        [
+          1352,
+          52
+        ],
+        [
+          109,
+          741
+        ]
+      ],
+      "threshold": 0.64
+    },
+    "ResNet": {
+      "auc": 0.9715753309870956,
+      "accuracy": 0.9161490683229814,
+      "f1": 0.8816530995616781,
+      "sensitivity": 0.8282352941176471,
+      "specificity": 0.9693732193732194,
+      "confusion_matrix": [
+        [
+          1361,
+          43
+        ],
+        [
+          146,
+          704
+        ]
+      ],
+      "threshold": 0.73
+    },
+    "XGB": {
+      "auc": 0.9766934808111278,
+      "accuracy": 0.9259094942324756,
+      "f1": 0.8968499073502162,
+      "sensitivity": 0.8541176470588235,
+      "specificity": 0.9693732193732194,
+      "confusion_matrix": [
+        [
+          1361,
+          43
+        ],
+        [
+          124,
+          726
+        ]
+      ],
+      "threshold": 0.6900000000000001
+    },
+    "Ensemble(orig)": {
+      "auc": 0.9788620747444277,
+      "accuracy": 0.9290150842945873,
+      "f1": 0.9024390243902439,
+      "sensitivity": 0.8705882352941177,
+      "specificity": 0.9643874643874644,
+      "confusion_matrix": [
+        [
+          1354,
+          50
+        ],
+        [
+          110,
+          740
+        ]
+      ],
+      "threshold": 0.66
+    },
+    "Meta-LR": {
+      "auc": 0.9789902798726328,
+      "accuracy": 0.9285714285714286,
+      "f1": 0.9022465088038859,
+      "sensitivity": 0.8741176470588236,
+      "specificity": 0.9615384615384616,
+      "confusion_matrix": [
+        [
+          1350,
+          54
+        ],
+        [
+          107,
+          743
+        ]
+      ],
+      "threshold": 0.605
+    }
+  },
+  "meta_learner": {
+    "coefficients": {
+      "SimpleCNN": 2.0493762787164607,
+      "Inception": 2.844513776803935,
+      "ResNet": 1.208756787661514,
+      "XGB": 1.4698953497260852
+    },
+    "intercept": -4.445888441579146,
+    "oof_val_accuracy_at_best_threshold": 0.9405940594059405
+  }
+}

@@ -1,0 +1,13 @@
+
+    === FINAL RESNET-PLUS REPORT ===
+    Total Samples Used: 10972
+    Optimal Threshold: 0.6417
+    
+    Accuracy: 0.9119
+    AUC Score: 0.9719
+    F1 Score: 0.9108
+    
+    Confusion Matrix:
+    [[761  62]
+ [ 83 740]]
+    
